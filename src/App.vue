@@ -1,34 +1,31 @@
 <template>
   <div>
-    <form-helper >
-      <div slot="form-header">
-        <h3>Admission Form</h3>
-        <p>Fill the form to apply</p>
-      </div>
-      <div slot="form-fields">
-        <input type="text" placeholder="name" required/>
-        <input type="password" placeholder="password" required>
-      </div>
-      <div slot="form-controls">
-        <button @click = "handleSubmit">Submit</button>
-      </div>
-    </form-helper>
+    <keep-alive>
+       <component v-bind:is="component"></component>
+    </keep-alive>
+    <button @click="component='form-one'">Show form one</button>
+    <button @click="component='form-two'">Show form two</button>
+    
   </div>
 </template>
 
 <script>
-import formHelper from './components/form-helper.vue'
+import formOne from './components/formOne'
+import formTwo from './components/formTwo'
+
 export default {
   components:{
-    'form-helper':formHelper
+    'form-one':formOne,
+    'form-two':formTwo
   },
   data () {
     return {
-      title:'I am a dynamic slot title'
+      title:'I am a dynamic slot title',
+      component:''
     }
   },
   methods:{
-   
+    
   }
 }
 </script>
