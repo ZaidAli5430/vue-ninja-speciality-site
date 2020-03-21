@@ -1,27 +1,22 @@
 <template>
   <div>
-    <keep-alive>
-       <component v-bind:is="component"></component>
-    </keep-alive>
-    <button @click="component='form-one'">Show form one</button>
-    <button @click="component='form-two'">Show form two</button>
+    <show-blogs></show-blogs>
     
   </div>
 </template>
 
 <script>
-import formOne from './components/formOne'
-import formTwo from './components/formTwo'
 
+import addBlog from './components/addBlog'
+import showBlogs from './components/showBlogs'
 export default {
   components:{
-    'form-one':formOne,
-    'form-two':formTwo
+    'add-blog':addBlog,
+    'show-blogs':showBlogs
   },
   data () {
     return {
-      title:'I am a dynamic slot title',
-      component:''
+  
     }
   },
   methods:{
@@ -30,9 +25,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
-    
+<style>
+body{
+  margin:0;
+  font-family:'Nunito SemiBold';
+}
 
 </style>
 
