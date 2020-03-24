@@ -14,15 +14,6 @@ Vue.filter('snippet',(value)=>{
 
 
 //custom directive
-Vue.directive('rainbow',{
-  bind(el,binding,vnode){
-    if (binding.value=='red'){
-      el.style.coel.style.color='red';lor='red';
-    }
-    
-
-  }
-});
 export const bus = new Vue({
   
 });

@@ -36,6 +36,20 @@ export default {
       this.$http.get('https://jsonplaceholder.typicode.com/posts').then((data)=>{
           this.blogs=data.body.slice(0,10);
         });
+  },
+  filters:{
+      'to-uppercase':(value)=>{
+        return value.toUpperCase();  
+      },
+  },
+  directives:{
+      'rainbow':{
+          bind(el,binding,vnode){
+             if (binding.value=='red'){
+                el.style.color='red';
+              }
+          }
+      }
   }
 }
 </script>
